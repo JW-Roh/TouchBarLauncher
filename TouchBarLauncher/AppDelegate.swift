@@ -33,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let result = (cls as! NSObjectProtocol).perform(sel).takeUnretainedValue()
         controller = result as? NSWindowController
         controller?.window?.delegate = self
+        controller?.window?.collectionBehavior = [.canJoinAllSpaces, .transient]
     }
     
     private func showTouchBar() {
